@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .product {
+        border: 1px solid black;
+        display: inline-block;
+        width: 200px;
+        padding: 10px;
+      }
+      .product img {
+        height: 100px;
+      }
+      button {
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sattu Bajar</h1>
+    <div class="product">
+      <img
+        src="https://images.pexels.com/photos/10853637/pexels-photo-10853637.jpeg?auto=compress&cs=tinysrgb&w=600"
+      />
+      <h4>Jordan Air</h4>
+      <p>X 1</p>
+      <p>Rs.2000</p>
+    </div>
+
+    <div class="product">
+      <img
+        src="https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg?auto=compress&cs=tinysrgb&w=600"
+      />
+      <h4>DSLR Camera</h4>
+      <p>X 1</p>
+      <p>Rs.5000</p>
+    </div>
+
+    <button>make payment</button>
+
+    <script>
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', async () => {
+        const response = await fetch('/pay', {
+          method: 'post',
+        });
+        const data = await response.json();
+        console.log(data);
+        window.location.href = data.payment_url;
+      });
+    </script>
+  </body>
+</html>
