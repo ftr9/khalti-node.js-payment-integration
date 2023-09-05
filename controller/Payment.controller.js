@@ -38,7 +38,32 @@ exports.MakePayment = async (req, res) => {
           Authorization: AuthorizationKey,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(paymentOptions),
+        body: JSON.stringify({
+          return_url: 'http://localhost:4050/successfull-payment',
+          website_url: 'http://localhost:4050/',
+          amount: 700 * 100,
+          purchase_order_id: 'Order-191806',
+          purchase_order_name: 'Buying Dlsr  and Shoe',
+          customer_info: {
+            name: 'Rahul Dotel',
+          },
+          product_details: [
+            {
+              identity: '2398y238575',
+              unit_price: 200,
+              name: 'Jordan Air',
+              total_price: 200,
+              quantity: 1,
+            },
+            {
+              identity: 'fsdfdsfdsfd',
+              unit_price: 500,
+              name: 'DSLR Camera',
+              total_price: 500,
+              quantity: 1,
+            },
+          ],
+        }),
       }
     );
     const paymentInitiatedResponse = await paymentInitiatedPromise.json();
