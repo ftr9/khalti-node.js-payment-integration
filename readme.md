@@ -2,13 +2,13 @@
 
 ## How Khalti payment works ?
 
-[X] User visits the merchant's website to make some purchase
-A unique purchase_order_id is generated at merchant's system
-Payment request is made to Khalti providing the purchase_order_id, amount in paisa and return_url
-User is redirected to the epayment portal (eg. https://pay.khalti.com)
-After payment is made by the user, a successful callback is made to the return_url
-The merchant website can optionally confirm the payment received
-The merchant website then proceeds other steps after payment confirmation
+- User visits the merchant's website to make some purchase
+- A unique purchase_order_id is generated at merchant's system
+- Payment request is made to Khalti providing the purchase_order_id, amount in paisa and return_url
+- User is redirected to the epayment portal (eg. https://pay.khalti.com)
+- After payment is made by the user, a successful callback is made to the return_url
+- The merchant website can optionally confirm the payment received
+- The merchant website then proceeds other steps after payment confirmation
 
 ### 1) Create a merchant account and grab api key from portal
 
