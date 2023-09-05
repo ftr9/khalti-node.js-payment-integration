@@ -1,5 +1,12 @@
 ## Khalti Payment Integration steps
 
+#### installation steps
+
+- clone the repo
+- run npm install
+- use your own merchant key in Payment.controller.js
+- run npm run dev
+
 ## How Khalti payment works ?
 
 - User visits the merchant's website to make some purchase
